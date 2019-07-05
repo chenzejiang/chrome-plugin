@@ -32,10 +32,15 @@
 		"webRequest",
 		"webRequestBlocking",
 		"storage",
-		"http://*/*",
-		"https://*/*"
+		"*://*/*"
 	],
-	"web_accessible_resources": ["js/inject.js"],
+	"options_page": "options.html",
+	"options_ui":
+	{
+		"page": "options.html",
+		"open_in_tab": true
+	},
+	"web_accessible_resources": ["js/inject.js", "*"],
 	"homepage_url": "https://www.github.com/chenzejiang",
 	"omnibox": { "keyword" : "js" },
 	"default_locale": "zh_CN"
