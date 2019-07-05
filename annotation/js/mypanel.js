@@ -127,24 +127,9 @@ const app = {
 $(function(){
 	chrome.tabs.onUpdated.addListener(function(tabId,changeInfo,tab) {
         if(changeInfo.status === "complete"){
-			console.log(123);
-			// $("#file-list").html('');
-            // app.init();
+			$("#file-list").html('');
+            app.init();
         }
     });
 	app.init();
 });
-
-// var myconsole = 
-// {
-// 	_log: function(obj)
-// 	{
-// 		// 不知为何，这种方式不行
-// 		chrome.devtools.inspectedWindow('console.log('+JSON.stringify(obj)+')');
-// 	},
-// 	log: function(obj)
-// 	{
-// 		// 这里有待完善
-// 		chrome.tabs.executeScript(chrome.devtools.inspectedWindow.tabId, {code: 'console.log(' + JSON.stringify(obj) + ')'}, function(){});
-// 	}
-// };
