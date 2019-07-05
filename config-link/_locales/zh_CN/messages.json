@@ -1,4 +1,4 @@
 {
-	"pluginDesc": {"message": "一个简单的Chrome插件demo"},
+	"pluginDesc": {"message": "这是一个可以注入帐号密码信息到页面上的插件，可以在配置页面自行配置"},
 	"helloWorld": {"message": "你好啊，世界！"}
 }

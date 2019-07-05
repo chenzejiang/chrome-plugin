@@ -8,7 +8,7 @@ const app = {
 		const data = JSON.parse(arr);
 		const btnBox = (_data) => {
 			return _data.map((item) => {
-				let _str = `<li><a data-href="${item.link}" href="javascript:void(0);">${item.name}</a></li>`
+				let _str = `<li><a data-href="${this.xss(item.link)}" href="javascript:void(0);">${item.name}</a></li>`
 				return _str;
 			});
 		}
@@ -26,12 +26,32 @@ const app = {
 		$("#container").append(projectBoxDom);
 	},
 	/**
+	 * 过滤xss攻击
+	 * @param {w} str 
+	 */
+	xss:function (str){
+        var s = "";
+        if(str.length == 0) return "";
+        s = str.replace(/&/g,"&amp;");
+        s = s.replace(/</g,"&lt;");
+        s = s.replace(/>/g,"&gt;");
+        s = s.replace(/ /g,"&nbsp;");
+        s = s.replace(/\'/g,"&#39;");
+        s = s.replace(/\"/g,"&quot;");
+        return s;
+    },
+	/**
 	 * 绑定DOM事件
 	 */
 	bindDomEvent() {
 		const that = this;
-		$("#container").on('click','a',function(){
+		$("#container").on('click', 'a', function() {
 			that.openUrl($(this).attr('data-href'));
+		});
+
+		$("#container").on('click', '#configBtn', function() {
+			chrome.runtime.openOptionsPage();
+            window.close();
 	  	});
 	},
 	/**
@@ -42,12 +62,27 @@ const app = {
 		chrome.tabs.create({url: _url});
 	},
 	/**
+	 * 配置json错误，插件提示
+	 */
+	configJsonError() {
+		let _str = `
+		<div class="errBox">
+			<p>请先正确的配置Json数据</p>
+			<button id="configBtn">立即配置</button>
+		</div>`;
+		$("#container").append(_str);
+	},
+	/**
 	 * 初始化
 	 */
 	init() {
 		chrome.storage.sync.get(['configLink'], (items) => {
 			this.bindDomEvent();
-			this.appendDom(items.configLink);
+			try {
+				this.appendDom(items.configLink);
+			} catch (error) {
+				this.configJsonError();
+			}
 		});
 	}
 }

@@ -1,4 +1,4 @@
 {
-	"pluginDesc": {"message": "A simple chrome extension demo"},
+	"pluginDesc": {"message": "This is a plug-in that can inject account and password information to the page. It can be configured in the configuration page"},
 	"helloWorld": {"message": "Hello World!"}
 }

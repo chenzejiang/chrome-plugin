@@ -39,3 +39,27 @@ body{
     font-size: 14px;
     color: #666;
 }
+.container .errBox{
+    text-align: center;
+}
+.container .errBox p{
+    font-size: 16px;
+    line-height: 24px;
+    margin: 10px 0;
+    color: #555;
+}
+.container .errBox button{
+    border-width: 2px;
+    border-style: solid;
+    border-color: #fff;
+    color:#fff;
+    border-radius: 5px;
+    margin:0 auto;
+    padding: 5px 10px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    background: #65c279;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+}

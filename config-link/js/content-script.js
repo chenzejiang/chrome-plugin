@@ -119,11 +119,15 @@
      */
     init() {
         chrome.storage.sync.get(['configLink'], (items) => {
-            this.initData(JSON.parse(items.configLink));
-            if (this.isAppendDom() === true) {
-                this.addCSS();
-                this.addHTML();
-            };
+            try {
+                this.initData(JSON.parse(items.configLink));
+                if (this.isAppendDom() === true) {
+                    this.addCSS();
+                    this.addHTML();
+                };
+            } catch (error) {
+                console.log(error);
+            }
         });
     }
 }
