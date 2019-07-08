@@ -5,10 +5,14 @@
 	bindBtnEvent() {
 		$('#save').click(function () {
 			const $textarea = $("#textarea").val();
-			chrome.storage.sync.set({'configLink': $textarea}, function() {
-				// alert('保存成功');
-				$("#status").text("保存成功");
-			});
+			try {
+				JSON.parse($textarea)
+				chrome.storage.sync.set({'configLink': $textarea}, function() {
+					$("#status").text("保存成功");
+				});
+			} catch (error) {
+				$("#status").text("保存失败，请检查JSON格式是否正确！(┬＿┬)");
+			}
 		});
 	},
 	/**
