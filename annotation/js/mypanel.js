@@ -33,7 +33,7 @@ const app = {
 	 * 过滤xss攻击
 	 * @param {w} str 
 	 */
-	htmlEncodeByRegExp:function (str){
+	xss:function (str){
         var s = "";
         if(str.length == 0) return "";
         s = str.replace(/&/g,"&amp;");
@@ -59,7 +59,7 @@ const app = {
 				<div class="file-list-link-box">
 					<a href="javascript:;">${item.url}</a>
 				</div>
-				<pre>${this.htmlEncodeByRegExp(annotationCode)}</pre>
+				<pre>${this.xss(annotationCode)}</pre>
 			</li>
 		`;
 		/* 过滤没注释的文件 */

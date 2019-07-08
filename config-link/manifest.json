@@ -28,9 +28,6 @@
 	[
 		"contextMenus",
 		"tabs",
-		"notifications",
-		"webRequest",
-		"webRequestBlocking",
 		"storage",
 		"*://*/*"
 	],
@@ -39,7 +36,7 @@
 		"page": "options.html",
 		"open_in_tab": true
 	},
-	"web_accessible_resources": ["js/inject.js", "*"],
+	"web_accessible_resources": ["*"],
 	"homepage_url": "https://www.github.com/chenzejiang",
 	"omnibox": { "keyword" : "js" },
 	"default_locale": "zh_CN"

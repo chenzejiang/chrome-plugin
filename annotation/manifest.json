@@ -29,8 +29,6 @@
 		"contextMenus",
 		"tabs",
 		"notifications",
-		"webRequest",
-		"webRequestBlocking",
 		"storage",
 		"http://*/*",
 		"https://*/*"
