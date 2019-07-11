@@ -73,6 +73,12 @@
         temp.innerHTML = css;
     },
     /**
+     * 删除元素
+     */
+    removeEle() {
+        document.getElementById('configLinkBox').style.display = 'none';
+    },
+    /**
      * 创建HTML
      */
     addHTML() {
@@ -120,10 +126,17 @@
     init() {
         chrome.storage.sync.get(['configLink'], (items) => {
             try {
+                const $configLink = document.getElementById("configLinkBox");
                 this.initData(JSON.parse(items.configLink));
                 if (this.isAppendDom() === true) {
-                    this.addCSS();
-                    this.addHTML();
+                    if ($configLink === null) {
+                        this.addCSS();
+                        this.addHTML();
+                    }
+                } else {
+                    if ($configLink) {
+                        $configLink.parentNode.removeChild($configLink);
+                    }
                 };
             } catch (error) {
                 console.log(error);
@@ -132,6 +145,9 @@
     }
 }
 
-window.onload = function () {
-    app.init();
-}
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.onUpdated === true) {
+        app.init();
+    }
+    sendResponse(200);
+});

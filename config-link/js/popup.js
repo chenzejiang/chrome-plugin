@@ -8,7 +8,7 @@ const app = {
 		const data = JSON.parse(arr);
 		const btnBox = (_data) => {
 			return _data.map((item) => {
-				let _str = `<li><a data-href="${this.xss(item.link)}" href="javascript:void(0);">${item.name}</a></li>`
+				let _str = `<li><a data-href="${this.xss(item.link)}" href="###">${item.name}</a></li>`
 				return _str;
 			});
 		}
@@ -90,12 +90,31 @@ $(function(){
 	app.init();
 });
 
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    if(changeInfo.status === "complete"){
+        sendMessageToContentScript({onUpdated:true}, (response) => {
+			if(response) console.log(response);
+		});
+	}
+});
 
-// chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-// 	if (tabs[0].url.substr(0, 7) === 'http://' || tabs[0].url.substr(0, 8) == 'https://') {
-// 		chrome.tabs.sendMessage(tabs[0].id, {url:tabs[0].url});
-//     }
-// });
+/* 获取当前选项卡ID */
+function getCurrentTabId(callback)
+{
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
+	{
+		if(callback) callback(tabs.length ? tabs[0].id: null);
+	});
+}
 
-// chrome.tabs.onUpdated.addListener(function(tabId,changeInfo,tab){
-// })
+/* 向content-script 发送消息 */
+function sendMessageToContentScript(message, callback)
+{
+	getCurrentTabId((tabId) =>
+	{
+		chrome.tabs.sendMessage(tabId, message, function(response)
+		{
+			if(callback) callback(response);
+		});
+	});
+}
