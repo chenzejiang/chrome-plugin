@@ -1,0 +1,76 @@
+body{
+    font-family: 'Microsoft Yahei';
+    width: 300px;
+    /* border:1px solid #d6e9c6; */
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.container .projectBox{
+    text-align: left;
+}
+.container .projectBox h2{
+    font-size: 16px;
+    padding: 5px 0;
+    background: #dff0d8;
+    /* color: #3c763d; */
+    color: #a94442;
+    background-color: #f2dede;
+    font-weight: bold;
+    text-align: center;
+}
+.container .projectBox ul {
+    font-size:0;
+}
+.container .projectBox ul li {
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
+    height: 30px;
+    line-height: 30px;
+    transition:all 0.3s ease;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+.container .projectBox ul li img{
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+}
+.container .projectBox ul li:hover{
+    background: #e47471;
+}
+.container .projectBox ul li:hover a{
+    color: #fff;
+}
+.container .projectBox ul li a{
+    font-size: 14px;
+    color: #666;
+    flex: 1;
+    vertical-align: middle;
+}
+.container .errBox{
+    text-align: center;
+}
+.container .errBox p{
+    font-size: 16px;
+    line-height: 24px;
+    margin: 10px 0;
+    color: #555;
+}
+.container .errBox button{
+    border-width: 2px;
+    border-style: solid;
+    border-color: #fff;
+    color:#fff;
+    border-radius: 5px;
+    margin:0 auto;
+    padding: 5px 10px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    background: #65c279;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+}

@@ -1,0 +1,71 @@
+*{
+    font-family: "Microsoft YaHei", Arial,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+html,body{
+    background-color: #eee;
+    color: #666;
+}
+.container{
+    width: 940px;
+    height: 100vh;
+    margin: 0 auto;
+    background: #fff;
+}
+.container h1{
+    color: #111;
+    text-align: center;
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+.container textarea{
+    width: 920px;
+    min-height: 400px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+    line-height: 21px;
+    color:#111;
+    border: 1px solid #989898;
+    resize: vertical;
+    border-radius: 6px;
+}
+.container .btnBox{
+    text-align: center
+}
+.container .btnBox .btn{
+    border-width: 2px;
+    border-style: solid;
+    border-color: #fff;
+    color:#fff;
+    border-radius: 5px;
+    margin:0 auto;
+    padding: 10px 20px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    background: #4591d2;
+    font-size: 16px;
+}
+.container .configDetail{
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 10px;
+}
+.container .configDetailTitle{
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    color: #3c763d;
+    background-color: #dff0d8;
+    padding: 0 10px;
+}
+.container .configDetailContent{
+    border: 1px solid #f0f0f0;
+    color: #333;
+    font-size: 14px;
+    padding: 10px;
+}
