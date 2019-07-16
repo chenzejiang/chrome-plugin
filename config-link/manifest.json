@@ -1,7 +1,7 @@
-{
-	"manifest_version": 2,
+{	
 	"name": "Config-Link",
-	"version": "1.0.1",
+	"manifest_version": 2,
+	"version": "1.0.3",
 	"description": "__MSG_pluginDesc__",
 	"icons":
 	{
@@ -16,7 +16,8 @@
 		"default_popup": "popup.html"
 	},
 	"background":
-	{
+	{	
+		"persistent": true,
 		"scripts": ["js/background.js"]
 	},
 	"content_scripts": 
@@ -30,11 +31,8 @@
 	],
 	"permissions":
 	[
-		"contextMenus",
-		"tabs",
 		"storage",
-		"http://*/*",
-		"https://*/*"
+		"<all_urls>"
 	],
 	"options_ui":
 	{
@@ -42,7 +40,7 @@
 		"open_in_tab": true
 	},
 	"web_accessible_resources": ["*"],
-	"homepage_url": "https://www.github.com/chenzejiang",
+	"homepage_url": "https://github.com/chenzejiang/chrome-plugin/tree/master/config-link",
 	"omnibox": { "keyword" : "js" },
 	"default_locale": "zh_CN"
 }
