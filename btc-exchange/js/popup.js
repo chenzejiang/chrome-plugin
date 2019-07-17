@@ -88,11 +88,6 @@ const app = {
 		$("#container").on('click', 'a', function() {
 			that.openUrl($(this).attr('data-href'));
 		});
-
-		$("#container").on('click', '#configBtn', function() {
-			chrome.runtime.openOptionsPage();
-            window.close();
-	  	});
 	},
 	/**
 	 * 打开资源
