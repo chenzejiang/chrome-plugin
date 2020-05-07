@@ -1,7 +1,7 @@
 {	
 	"name": "Config-Link",
 	"manifest_version": 2,
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "__MSG_pluginDesc__",
 	"icons":
 	{
@@ -41,6 +41,5 @@
 	},
 	"web_accessible_resources": ["*"],
 	"homepage_url": "https://github.com/chenzejiang/chrome-plugin/tree/master/config-link",
-	"omnibox": { "keyword" : "js" },
 	"default_locale": "zh_CN"
 }

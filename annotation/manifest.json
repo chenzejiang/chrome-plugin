@@ -35,7 +35,6 @@
 	],
 	"web_accessible_resources": ["js/inject.js"],
 	"homepage_url": "https://www.github.com/chenzejiang",
-	"omnibox": { "keyword" : "js" },
 	"default_locale": "zh_CN",
 	"devtools_page": "devtools.html"
 }

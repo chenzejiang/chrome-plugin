@@ -145,6 +145,7 @@
     }
 }
 
+/* 接收到重置的命令 */
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.onUpdated === true) {
         app.init();

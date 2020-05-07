@@ -18,6 +18,5 @@
 	"permissions":[],
 	"web_accessible_resources": ["*"],
 	"homepage_url": "https://github.com/chenzejiang/chrome-plugin/tree/master/btc-exchange",
-	"omnibox": { "keyword" : "btc" },
 	"default_locale": "zh_CN"
 }
